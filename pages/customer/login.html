@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Utente</title>
+    <link rel="stylesheet" href="../../css/pages/common-pages/login.css">
+    <link rel="stylesheet" href="../../css/common/reset.css">
+    <link rel="stylesheet" href="../../css/common/variables.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="logo">
+            <h1>Accesso Utente</h1>
+            <p class="subtitle">Accedi al tuo account per ricare il credito o per collegarti a un distributore</p>
+        </div>
+
+        <form id="loginForm">
+            <div class="input-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="nome@esempio.com" required>
+            </div>
+
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Inserisci la tua password" required>
+                <span class="password-toggle" onclick="togglePassword()">👁️</span>
+            </div>
+
+            <div class="forgot-password">
+                <a href="#forgot">Password dimenticata?</a>
+            </div>
+
+            <button type="submit" class="btn-primary">Accedi</button>
+        </form>
+
+        <div class="signup-link">
+            Non hai un account? <a href="register.html">Registrati</a>
+        </div>
+    </div>
+
+    <script src="../../js/pages/common-pages/login.js"></script>
+
+</body>
+</html>

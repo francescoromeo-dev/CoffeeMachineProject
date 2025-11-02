@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unipa Coffee Time - Dashboard</title>
+    <link rel="stylesheet" href="../../css/common/reset.css">
+    <link rel="stylesheet" href="../../css/common/variables.css">
+    <link rel="stylesheet" href="../../css/pages/customer/customer-dashboard.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-brand">Unipa Coffee Time</div>
+        <button class="btn-logout">Logout</button>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- Left Section -->
+        <div class="left-section">
+            <div class="user-info">
+                <div class="info-item">
+                    <span class="info-label">Utente:</span>
+                    <span class="info-value">Francesco Romeo</span>
+                </div>
+
+                <div class="info-item">
+                    <div class="balance-section">
+                        <div>
+                            <span class="info-label">Saldo attuale:</span>
+                            <span class="info-value" style="margin-left: 10px;">15,56 €</span>
+                        </div>
+                        <button class="btn-recharge">Ricarica</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Section -->
+        <div class="right-section">
+            <h2 class="connection-title">Collegati subito ad un distributore</h2>
+            
+            <form class="connection-form">
+                <div class="input-group">
+                    <label for="distributor-id">ID Distributore</label>
+                    <input 
+                        type="text" 
+                        id="distributor-id" 
+                        name="distributor-id" 
+                        placeholder="Inserisci l'ID del distributore"
+                        required
+                    >
+                </div>
+                
+                <button type="submit" class="btn-connect">Collegati</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

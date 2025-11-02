@@ -1,0 +1,15 @@
+/* Variabili CSS - Solo le essenziali */
+
+:root {
+    /* Colori base */
+    --blu-scuro: #2c3e50;
+    --blu-chiaro: #3498db;
+    --verde: #27ae60;
+    --grigio-chiaro: #ecf0f1;
+    --grigio: #bdc3c7;
+    
+    /* Spaziature */
+    --spazio-piccolo: 10px;
+    --spazio-medio: 20px;
+    --spazio-grande: 30px;
+}

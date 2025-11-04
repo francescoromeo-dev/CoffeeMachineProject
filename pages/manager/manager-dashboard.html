@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Manager</title>
+    <link rel="stylesheet" href="../../css/common/reset.css">
+    <link rel="stylesheet" href="../../css/pages/manager-dashboard.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-brand">Unipa Coffee Time - Gestione Manager</div>
+        <button class="btn-logout">Logout</button>
+    </nav>
+
+    <div class="main-container">
+        
+        <!-- Gestione distributori -->
+        <section class="section-card">
+            <h2 class="section-title">Gestione Distributori</h2>
+            
+            <div class="subsection">
+                <h3 class="subsection-title">Aggiungi Nuovo Distributore</h3>
+                <form class="form-inline">
+                    <input type="text" placeholder="ID Distributore (es. DIST004)" class="input-field" required>
+                    <input type="text" placeholder="Ubicazione (es. Edificio 10)" class="input-field" required>
+                    <button type="submit" class="btn-primary">Aggiungi</button>
+                </form>
+            </div>
+
+            <div class="subsection">
+                <h3 class="subsection-title">Distributori Registrati</h3>
+                <div class="table-container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Ubicazione</th>
+                                <th>Stato</th>
+                                <th>Azioni</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>DIST001</strong></td>
+                                <td>Edificio 19 - Piano Terra</td>
+                                <td><span class="badge badge-active">Attivo</span></td>
+                                <td class="actions-cell">
+                                    <button class="btn-small btn-warning">Disattiva</button>
+                                    <button class="btn-small btn-danger">Rimuovi</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>DIST002</strong></td>
+                                <td>Edificio 8 - Secondo Piano</td>
+                                <td><span class="badge badge-inactive">Inattivo</span></td>
+                                <td class="actions-cell">
+                                    <button class="btn-small btn-success">Attiva</button>
+                                    <button class="btn-small btn-danger">Rimuovi</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>DIST003</strong></td>
+                                <td>Edificio 12 - Piano Terra</td>
+                                <td><span class="badge badge-active">Attivo</span></td>
+                                <td class="actions-cell">
+                                    <button class="btn-small btn-warning">Disattiva</button>
+                                    <button class="btn-small btn-danger">Rimuovi</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gestione addetti manutenzione -->
+        <section class="section-card">
+            <h2 class="section-title">Gestione Addetti Manutenzione</h2>
+            
+            <div class="subsection">
+                <h3 class="subsection-title">Aggiungi Nuovo Manutentore</h3>
+                <form class="form-inline">
+                    <input type="text" placeholder="Nome Completo" class="input-field" required>
+                    <input type="email" placeholder="Email" class="input-field" required>
+                    <input type="tel" placeholder="Telefono" class="input-field" required>
+                    <button type="submit" class="btn-primary">Aggiungi</button>
+                </form>
+            </div>
+
+            <div class="subsection">
+                <h3 class="subsection-title">Manutentori Registrati</h3>
+                <div class="table-container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Nome</th>
+                                <th>Email</th>
+                                <th>Telefono</th>
+                                <th>Stato</th>
+                                <th>Azioni</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Mario Rossi</strong></td>
+                                <td>mario.rossi@unipa.it</td>
+                                <td>+39 320 1234567</td>
+                                <td><span class="badge badge-active">Attivo</span></td>
+                                <td class="actions-cell">
+                                    <button class="btn-small btn-danger">Rimuovi</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>Laura Bianchi</strong></td>
+                                <td>laura.bianchi@unipa.it</td>
+                                <td>+39 345 9876543</td>
+                                <td><span class="badge badge-active">Attivo</span></td>
+                                <td class="actions-cell">
+                                    <button class="btn-small btn-danger">Rimuovi</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>Giuseppe Verdi</strong></td>
+                                <td>giuseppe.verdi@unipa.it</td>
+                                <td>+39 333 5554444</td>
+                                <td><span class="badge badge-active">Attivo</span></td>
+                                <td class="actions-cell">
+                                    <button class="btn-small btn-danger">Rimuovi</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stato di tutti i distributori -->
+        <section class="section-card">
+            <h2 class="section-title">Stato di Tutti i Distributori</h2>
+            
+            <div class="distributors-grid">
+                
+                <div class="distributor-card">
+                    <div class="card-header">
+                        <h3 class="card-title">DIST001</h3>
+                        <span class="badge badge-active">Attivo</span>
+                    </div>
+                    <div class="card-location">📍 Edificio 19 - Piano Terra</div>
+                    
+                    <div class="card-section">
+                        <h4>Livelli Forniture</h4>
+                        <div class="supply-item">
+                            <span class="supply-label">Caffè</span>
+                            <div class="mini-progress">
+                                <div class="mini-fill" style="width: 75%;"></div>
+                            </div>
+                            <span class="supply-value">75%</span>
+                        </div>
+                        <div class="supply-item">
+                            <span class="supply-label">Latte</span>
+                            <div class="mini-progress">
+                                <div class="mini-fill warning" style="width: 35%;"></div>
+                            </div>
+                            <span class="supply-value warning">35%</span>
+                        </div>
+                        <div class="supply-item">
+                            <span class="supply-label">Bicchieri</span>
+                            <div class="mini-progress">
+                                <div class="mini-fill critical" style="width: 15%;"></div>
+                            </div>
+                            <span class="supply-value critical">15%</span>
+                        </div>
+                    </div>
+                    
+                    <div class="card-alerts">
+                        <span class="alert-badge critical">2 Critici</span>
+                        <span class="alert-badge warning">1 Attenzione</span>
+                    </div>
+                </div>
+
+                <div class="distributor-card">
+                    <div class="card-header">
+                        <h3 class="card-title">DIST002</h3>
+                        <span class="badge badge-inactive">Inattivo</span>
+                    </div>
+                    <div class="card-location">📍 Edificio 8 - Secondo Piano</div>
+                    
+                    <div class="card-section">
+                        <h4>Livelli Forniture</h4>
+                        <div class="supply-item">
+                            <span class="supply-label">Caffè</span>
+                            <div class="mini-progress">
+                                <div class="mini-fill" style="width: 90%;"></div>
+                            </div>
+                            <span class="supply-value">90%</span>
+                        </div>
+                        <div class="supply-item">
+                            <span class="supply-label">Latte</span>
+                            <div class="mini-progress">
+                                <div class="mini-fill" style="width: 80%;"></div>
+                            </div>
+                            <span class="supply-value">80%</span>
+                        </div>
+                        <div class="supply-item">
+                            <span class="supply-label">Bicchieri</span>
+                            <div class="mini-progress">
+                                <div class="mini-fill" style="width: 65%;"></div>
+                            </div>
+                            <span class="supply-value">65%</span>
+                        </div>
+                    </div>
+                    
+                    <div class="card-alerts">
+                        <span class="alert-badge info">Manutenzione programmata</span>
+                    </div>
+                </div>
+
+                <div class="distributor-card">
+                    <div class="card-header">
+                        <h3 class="card-title">DIST003</h3>
+                        <span class="badge badge-active">Attivo</span>
+                    </div>
+                    <div class="card-location">📍 Edificio 12 - Piano Terra</div>
+                    
+                    <div class="card-section">
+                        <h4>Livelli Forniture</h4>
+                        <div class="supply-item">
+                            <span class="supply-label">Caffè</span>
+                            <div class="mini-progress">
+                                <div class="mini-fill" style="width: 45%;"></div>
+                            </div>
+                            <span class="supply-value warning">45%</span>
+                        </div>
+                        <div class="supply-item">
+                            <span class="supply-label">Latte</span>
+                            <div class="mini-progress">
+                                <div class="mini-fill" style="width: 50%;"></div>
+                            </div>
+                            <span class="supply-value">50%</span>
+                        </div>
+                        <div class="supply-item">
+                            <span class="supply-label">Bicchieri</span>
+                            <div class="mini-progress">
+                                <div class="mini-fill" style="width: 55%;"></div>
+                            </div>
+                            <span class="supply-value">55%</span>
+                        </div>
+                    </div>
+                    
+                    <div class="card-alerts">
+                        <span class="alert-badge info">Tutto OK</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </div>
+</body>
+</html>

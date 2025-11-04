@@ -5,13 +5,175 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard Manutentore</title>
     <link rel="stylesheet" href="../../css/common/reset.css">
-    <link rel="stylesheet" href="../../css/common/variables.css">
-    <link rel="stylesheet" href="../../css/pages/maintenance.css">
+    <link rel="stylesheet" href="../../css/pages/maintenance-dashboard.css">
 </head>
 <body>
     <nav class="navbar">
-        <div class="navbar-brand">Unipa Coffee Time</div>
+        <div class="navbar-brand">Unipa Coffee Time - Manutenzione</div>
         <button class="btn-logout">Logout</button>
     </nav>
+
+    <div class="main-container">
+        <div class="search-section">
+            <h2>Controlla Stato Distributore</h2>
+            <form class="search-form">
+                <div class="input-group">
+                    <label for="distributor-id">ID Distributore</label>
+                    <input 
+                        type="text" 
+                        id="distributor-id" 
+                        name="distributor-id" 
+                        placeholder="Inserisci l'ID (es. DIST001)"
+                        value="DIST001"
+                        required>
+                </div>
+                <button type="submit" class="btn-search">Carica Stato</button>
+            </form>
+        </div>
+
+        <div class="results-section">
+            <div class="distributor-info">
+                <h3>Distributore <span class="distributor-id">DIST001</span></h3>
+                <div class="info-grid">
+                    <div class="info-card">
+                        <div class="info-content">
+                            <span class="info-label">Ubicazione</span>
+                            <span class="info-value">Edificio 19 - Piano Terra</span>
+                        </div>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-content">
+                            <span class="info-label">Stato</span>
+                            <span class="info-value status-active">Operativo</span>
+                        </div>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-content">
+                            <span class="info-label">Ultima Manutenzione</span>
+                            <span class="info-value">15/10/2024</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="supplies-section">
+                <h3>Livelli Forniture</h3>
+                <div class="supplies-grid">
+                    <div class="supply-card">
+                        <div class="supply-header">
+                            <span class="supply-name">Caffè</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 75%;"></div>
+                        </div>
+                        <span class="supply-percentage">75%</span>
+                    </div>
+
+                    <div class="supply-card">
+                        <div class="supply-header">
+                            <span class="supply-name">Latte</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill warning" style="width: 35%;"></div>
+                        </div>
+                        <span class="supply-percentage warning">35%</span>
+                    </div>
+
+                    <div class="supply-card">
+                        <div class="supply-header">
+                            <span class="supply-name">Zucchero</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 60%;"></div>
+                        </div>
+                        <span class="supply-percentage">60%</span>
+                    </div>
+
+                    <div class="supply-card">
+                        <div class="supply-header">
+                            <span class="supply-name">Bicchieri</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill critical" style="width: 15%;"></div>
+                        </div>
+                        <span class="supply-percentage critical">15%</span>
+                    </div>
+
+                    <div class="supply-card">
+                        <div class="supply-header">
+                            <span class="supply-name">Acqua</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 85%;"></div>
+                        </div>
+                        <span class="supply-percentage">85%</span>
+                    </div>
+
+                    <div class="supply-card">
+                        <div class="supply-header">
+                            <span class="supply-name">Orzo</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 50%;"></div>
+                        </div>
+                        <span class="supply-percentage">50%</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="issues-section">
+                <h3>Guasti e Avvisi</h3>
+                <div class="issues-list">
+                    <div class="issue-card critical-issue">
+                        <div class="issue-header">
+                            <span class="issue-icon">🔴</span>
+                            <span class="issue-title">Critico</span>
+                            <span class="issue-date">02/11/2024 - 14:30</span>
+                        </div>
+                        <p class="issue-description">Livello bicchieri sotto soglia minima (15%). Rifornimento urgente necessario.</p>
+                    </div>
+
+                    <!-- Attenzione -->
+                    <div class="issue-card warning-issue">
+                        <div class="issue-header">
+                            <span class="issue-icon">🟡</span>
+                            <span class="issue-title">Attenzione</span>
+                            <span class="issue-date">02/11/2024 - 09:15</span>
+                        </div>
+                        <p class="issue-description">Livello latte in esaurimento (35%). Pianificare rifornimento entro 24h.</p>
+                    </div>
+
+                    <!-- Info -->
+                    <div class="issue-card info-issue">
+                        <div class="issue-header">
+                            <span class="issue-icon">🔵</span>
+                            <span class="issue-title">Informazione</span>
+                            <span class="issue-date">01/11/2024 - 16:45</span>
+                        </div>
+                        <p class="issue-description">Temperatura erogazione ottimale. Sistema funzionante correttamente.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Azioni Rapide -->
+            <div class="actions-section">
+                <h3>Azioni Rapide</h3>
+                <div class="actions-grid">
+                    <button class="action-btn">
+                        <span class="action-text">Registra Rifornimento</span>
+                    </button>
+                    <button class="action-btn">
+                        <span class="action-text">Segnala Guasto</span>
+                    </button>
+                    <button class="action-btn">
+                        <span class="action-text">Manutenzione Completata</span>
+                    </button>
+                    <button class="action-btn">
+                        <span class="action-text">Report Dettagliato</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

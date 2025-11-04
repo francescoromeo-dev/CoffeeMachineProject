@@ -3,133 +3,142 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Schermo Distributore</title>
+    <title>Unipa Coffee Time - Distributore</title>
     <link rel="stylesheet" href="../../css/common/reset.css">
-    <link rel="stylesheet" href="../../css/common/variables.css">
-    <link rel="stylesheet" href="../../css/pages/distributor.css">
+    <link rel="stylesheet" href="../../css/pages/screen.css">
 </head>
 <body>
-    <div class="container">
-        <!-- Header con info distributore -->
-        <header class="distributor-header">
-            <h1>Distributore numero 1</h1>
-        </header>
+    <nav class="navbar">
+        <div class="navbar-brand">Unipa Coffee Time</div>
+        <button class="btn-logout">Logout</button>
+    </nav>
 
-        <!-- Info utente -->
-        <div class="user-info">
-            <div class="user-detail">
-                <span class="label">Utente</span>
-                <span class="value">Francesco Romeo</span>
+    <div class="vending-container">
+        <div class="vending-box">
+            <div class="display-section">
+                <div class="display-content">
+                    <div class="display-item">
+                        <div class="display-label">Utente Collegato</div>
+                        <div class="display-value user">Francesco Romeo</div>
+                    </div>
+                    <div class="display-item">
+                        <div class="display-label">Credito Disponibile</div>
+                        <div class="display-value">€ 15,50</div>
+                    </div>
+                </div>
             </div>
-            <div class="user-detail credit">
-                <span class="label">Credito</span>
-                <span class="value">€ 14,89</span>
-            </div>
-        </div>
 
-        <!-- Griglia bevande -->
-        <div class="drinks-section">
-            <h2>Bevande Disponibili</h2>
-            
-            <!-- Sezione Caffè -->
-            <div class="category">
-                <h3 class="category-title">Caffè</h3>
+            <div class="drinks-section">
+                <h2 class="section-title">Seleziona la tua bevanda</h2>
+
                 <div class="drinks-grid">
-                    <div class="drink-card" data-drink="Caffè" data-type="coffee">
-                        <div class="drink-icon">☕</div>
-                        <h4>Caffè</h4>
-                        <p class="drink-price">€ 0,80</p>
-                        <button class="btn-select">Seleziona</button>
-                    </div>
-                    <div class="drink-card" data-drink="Caffè Macchiato">
-                        <div class="drink-icon">☕</div>
-                        <h4>Caffè Macchiato</h4>
-                        <p class="drink-price">€ 0,90</p>
-                        <button class="btn-select">Seleziona</button>
-                    </div>
-                    <div class="drink-card" data-drink="Cappuccino">
-                        <div class="drink-icon">☕</div>
-                        <h4>Cappuccino</h4>
-                        <p class="drink-price">€ 1,20</p>
-                        <button class="btn-select">Seleziona</button>
-                    </div>
-                    <div class="drink-card" data-drink="Ginseng">
-                        <div class="drink-icon">☕</div>
-                        <h4>Ginseng</h4>
-                        <p class="drink-price">€ 1,00</p>
-                        <button class="btn-select">Seleziona</button>
-                    </div>
-                </div>
-            </div>
+                    
+                    <div class="drink-card">
+                        <div class="drink-header">
+                            <h3 class="drink-name">Caffè</h3>
+                            <p class="drink-price">€ 0,80</p>
+                        </div>
+                        <form class="drink-form">
+                            <div class="form-group">
+                                <label>Zucchero</label>
+                                <div class="sugar-options">
+                                    <input type="radio" name="sugar-caffe" id="caffe-0" value="0" checked>
+                                    <label for="caffe-0" class="sugar-label">0</label>
 
-            <!-- Sezione Altre Bevande -->
-            <div class="category">
-                <h3 class="category-title">Altre Bevande</h3>
-                <div class="drinks-grid">
-                    <div class="drink-card" data-drink="Latte Macchiato">
-                        <div class="drink-icon">🥛</div>
-                        <h4>Latte Macchiato</h4>
-                        <p class="drink-price">€ 1,30</p>
-                        <button class="btn-select">Seleziona</button>
-                    </div>
-                    <div class="drink-card" data-drink="Tè">
-                        <div class="drink-icon">🍵</div>
-                        <h4>Tè</h4>
-                        <p class="drink-price">€ 0,70</p>
-                        <button class="btn-select">Seleziona</button>
-                    </div>
-                    <div class="drink-card" data-drink="Cioccolata Calda">
-                        <div class="drink-icon">🫖</div>
-                        <h4>Cioccolata Calda</h4>
-                        <p class="drink-price">€ 1,50</p>
-                        <button class="btn-select">Seleziona</button>
-                    </div>
-                    <div class="drink-card" data-drink="Orzo">
-                        <div class="drink-icon">🌾</div>
-                        <h4>Orzo</h4>
-                        <p class="drink-price">€ 0,80</p>
-                        <button class="btn-select">Seleziona</button>
-                    </div>
-                </div>
-            </div>
-        </div>
+                                    <input type="radio" name="sugar-caffe" id="caffe-1" value="1">
+                                    <label for="caffe-1" class="sugar-label">1</label>
 
-        <!-- Modale per selezione zucchero -->
-        <div class="modal" id="sugarModal">
-            <div class="modal-content">
-                <button class="modal-close" id="closeModal">&times;</button>
-                
-                <h3 id="selectedDrink">Caffè</h3>
-                
-                <!-- Selezione dimensione (solo per caffè) -->
-                <div class="option-group" id="coffeeSize" style="display: none;">
-                    <label class="option-label">Dimensione</label>
-                    <div class="option-buttons">
-                        <button class="option-btn active" data-size="corto">Corto</button>
-                        <button class="option-btn" data-size="normale">Normale</button>
-                        <button class="option-btn" data-size="lungo">Lungo</button>
+                                    <input type="radio" name="sugar-caffe" id="caffe-2" value="2">
+                                    <label for="caffe-2" class="sugar-label">2</label>
+
+                                    <input type="radio" name="sugar-caffe" id="caffe-3" value="3">
+                                    <label for="caffe-3" class="sugar-label">3</label>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn-buy">Acquista</button>
+                        </form>
                     </div>
-                </div>
-                
-                <!-- Selezione zucchero -->
-                <div class="option-group">
-                    <label class="option-label">Zucchero</label>
-                    <div class="option-buttons">
-                        <button class="option-btn active" data-sugar="0">0</button>
-                        <button class="option-btn" data-sugar="1">1</button>
-                        <button class="option-btn" data-sugar="2">2</button>
-                        <button class="option-btn" data-sugar="3">3</button>
+
+                    <div class="drink-card">
+                        <div class="drink-header">
+                            <h3 class="drink-name">Cappuccino</h3>
+                            <p class="drink-price">€ 1,20</p>
+                        </div>
+                        <form class="drink-form">
+                            <div class="form-group">
+                                <label>Zucchero</label>
+                                <div class="sugar-options">
+                                    <input type="radio" name="sugar-cappuccino" id="cappuccino-0" value="0" checked>
+                                    <label for="cappuccino-0" class="sugar-label">0</label>
+
+                                    <input type="radio" name="sugar-cappuccino" id="cappuccino-1" value="1">
+                                    <label for="cappuccino-1" class="sugar-label">1</label>
+
+                                    <input type="radio" name="sugar-cappuccino" id="cappuccino-2" value="2">
+                                    <label for="cappuccino-2" class="sugar-label">2</label>
+
+                                    <input type="radio" name="sugar-cappuccino" id="cappuccino-3" value="3">
+                                    <label for="cappuccino-3" class="sugar-label">3</label>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn-buy">Acquista</button>
+                        </form>
                     </div>
-                </div>
-                
-                <div class="modal-footer">
-                    <button class="btn-modal-cancel">Annulla</button>
-                    <button class="btn-modal-confirm">Conferma</button>
+
+                    <div class="drink-card">
+                        <div class="drink-header">
+                            <h3 class="drink-name">Latte Macchiato</h3>
+                            <p class="drink-price">€ 1,30</p>
+                        </div>
+                        <form class="drink-form">
+                            <div class="form-group">
+                                <label>Zucchero</label>
+                                <div class="sugar-options">
+                                    <input type="radio" name="sugar-latte" id="latte-0" value="0" checked>
+                                    <label for="latte-0" class="sugar-label">0</label>
+
+                                    <input type="radio" name="sugar-latte" id="latte-1" value="1">
+                                    <label for="latte-1" class="sugar-label">1</label>
+
+                                    <input type="radio" name="sugar-latte" id="latte-2" value="2">
+                                    <label for="latte-2" class="sugar-label">2</label>
+
+                                    <input type="radio" name="sugar-latte" id="latte-3" value="3">
+                                    <label for="latte-3" class="sugar-label">3</label>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn-buy">Acquista</button>
+                        </form>
+                    </div>
+
+                    <div class="drink-card">
+                        <div class="drink-header">
+                            <h3 class="drink-name">Cioccolata Calda</h3>
+                            <p class="drink-price">€ 1,50</p>
+                        </div>
+                        <form class="drink-form">
+                            <div class="form-group">
+                                <label>Zucchero</label>
+                                <div class="sugar-options">
+                                    <input type="radio" name="sugar-cioccolata" id="cioccolata-0" value="0" checked>
+                                    <label for="cioccolata-0" class="sugar-label">0</label>
+
+                                    <input type="radio" name="sugar-cioccolata" id="cioccolata-1" value="1">
+                                    <label for="cioccolata-1" class="sugar-label">1</label>
+
+                                    <input type="radio" name="sugar-cioccolata" id="cioccolata-2" value="2">
+                                    <label for="cioccolata-2" class="sugar-label">2</label>
+
+                                    <input type="radio" name="sugar-cioccolata" id="cioccolata-3" value="3">
+                                    <label for="cioccolata-3" class="sugar-label">3</label>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn-buy">Acquista</button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-
-    <script src="../../js/pages/distributor.js"></script>
 </body>
 </html>
